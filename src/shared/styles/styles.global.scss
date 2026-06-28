@@ -1,0 +1,6 @@
+@use "set";
+@use "variables";
+
+html, body {
+  background-color: var(--bg-primary);
+}

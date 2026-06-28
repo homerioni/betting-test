@@ -1,0 +1,15 @@
+.wrapper {
+  width: fit-content;
+  height: 40px;
+  padding: 0 20px;
+  background-color: var(--bg-accent);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-text-for-accent);
+  text-align: center;
+  transition: background-color .15s ease;
+
+  &:hover {
+    background-color: var(--bg-accent-hover);
+  }
+}

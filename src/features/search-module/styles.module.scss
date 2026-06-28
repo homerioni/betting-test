@@ -1,0 +1,22 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background-color: var(--bg-secondary);
+}
+
+.content {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.input {
+  width: 356px;
+}
+
+.button {
+  flex: none;
+}
