@@ -1,6 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { GameListError, GameListResponse } from "./types";
-import { BASE_API_URL } from "../constants";
 
 export const getGameList = createAsyncThunk<
   GameListResponse,
@@ -8,9 +7,7 @@ export const getGameList = createAsyncThunk<
   { rejectValue: GameListError }
 >("gameList/fetch", async (partnerName = "belparyaj", { rejectWithValue }) => {
   try {
-    const response = await fetch(
-      `${BASE_API_URL}/game/list?partner_name=${partnerName}`
-    );
+    const response = await fetch(`/api/game/list?partner_name=${partnerName}`);
     const data = await response.json();
 
     if (!response.ok) {

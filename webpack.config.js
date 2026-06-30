@@ -56,9 +56,7 @@ module.exports = (_env, argv) => {
               loader: "sass-loader",
               options: {
                 sassOptions: {
-                  includePaths: [
-                    path.resolve(__dirname, "src/shared/styles"),
-                  ],
+                  includePaths: [path.resolve(__dirname, "src/shared/styles")],
                 },
               },
             },
@@ -98,6 +96,15 @@ module.exports = (_env, argv) => {
       hot: true,
       port: 3000,
       open: true,
+      proxy: [
+        {
+          context: ["/api"],
+          target: "https://belparyaj.com",
+          pathRewrite: { "^/api": "/pragmatic" },
+          changeOrigin: true,
+          secure: true,
+        },
+      ],
     },
     devtool: isProduction ? "source-map" : "eval-cheap-module-source-map",
     performance: {
